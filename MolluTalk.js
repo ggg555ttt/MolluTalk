@@ -151,7 +151,7 @@ this.offsetParent||r.body;a&&!/^body|html$/i.test(a.nodeName)&&c.css(a,"position
 c.each(["Height","Width"],function(a,b){var d=b.toLowerCase();c.fn["inner"+b]=function(){return this[0]?c.css(this[0],d,false,"padding"):null};c.fn["outer"+b]=function(f){return this[0]?c.css(this[0],d,false,f?"margin":"border"):null};c.fn[d]=function(f){var e=this[0];if(!e)return f==null?null:this;if(c.isFunction(f))return this.each(function(i){var j=c(this);j[d](f.call(this,i,j[d]()))});return"scrollTo"in e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["client"+b]||
 e.document.body["client"+b]:e.nodeType===9?Math.max(e.documentElement["client"+b],e.body["scroll"+b],e.documentElement["scroll"+b],e.body["offset"+b],e.documentElement["offset"+b]):f===v?c.css(e,d):this.css(d,typeof f==="string"?f:f+"px")}});z.jQuery=z.$=c})(window);
 //javascript:var xhr=new XMLHttpRequest();xhr.open('GET','https://ghproxy.com/https://raw.githubusercontent.com/ggg555ttt/MolluTalk/main/MolluTalk.js',true);xhr.onload=function(){if(xhr.readyState===4&&xhr.status===200){eval(xhr.responseText)}};xhr.send(null);
-alert("刷新或切换页面会导致您设置自定义内容变回原样,请谨慎使用\n另外此功能不适用共享文件生成,无法储存您的自定义内容\n图像生成功能则不受限制,祝您使用愉快!");
+alert("点击头像可以设置您的自定义图片\n点击名字或羁绊事件可以修改其中的文字\n另外刷新或切换页面会导致您所做的自定义更改变回原样\n并且此功能不适用共享文件生成\n聊天图片可以不受影响的正常生成\n\n如果您明白了以上事项，请点击【确定】");
 $("body").append("<input id='up' hidden type='file'/>");
 $("#up").change(function()
 {
