@@ -13,7 +13,7 @@
 (function() {
     'use strict';
     /* globals jQuery, $, waitForKeyElements */
-
+    alert("点击头像可以设置您的自定义图片\n点击名字或羁绊事件可以修改其中的文字\n另外刷新或切换页面会导致您所做的自定义更改变回原样\n并且此功能不适用共享文件生成，但是聊天图片可以不受影响的正常生成\n如果您明白了以上事项，请点击【确定】");
     var img;
     var imgurl;
     var text;
