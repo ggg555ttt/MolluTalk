@@ -152,61 +152,52 @@ c.each(["Height","Width"],function(a,b){var d=b.toLowerCase();c.fn["inner"+b]=fu
 e.document.body["client"+b]:e.nodeType===9?Math.max(e.documentElement["client"+b],e.body["scroll"+b],e.documentElement["scroll"+b],e.body["offset"+b],e.documentElement["offset"+b]):f===v?c.css(e,d):this.css(d,typeof f==="string"?f:f+"px")}});z.jQuery=z.$=c})(window);
 //javascript:var xhr=new XMLHttpRequest();xhr.open('GET','https://ghproxy.com/https://raw.githubusercontent.com/ggg555ttt/MolluTalk/main/MolluTalk.js',true);xhr.onload=function(){if(xhr.readyState===4&&xhr.status===200){eval(xhr.responseText)}};xhr.send(null);
 alert("点击头像可以设置您的自定义图片\n点击名字或羁绊事件可以修改其中的文字\n另外刷新或切换页面会导致您所做的自定义更改变回原样\n并且此功能不适用共享文件生成，但是聊天图片可以不受影响的正常生成\n每次刷新或进入网页只需要点击一次书签，重复点击会出现BUG\n如果您明白了以上事项，请点击【确定】");
-$("body").append("<input id='up' hidden type='file'/>");
-$("#up").change(function()
-{
-	var file = this.files[0];
-	//console.log(this.files, 99999);
-	var reader = new FileReader();
-	reader.readAsDataURL(file); //调用自带方法进行转换
-	reader.onload = function(e)
-	{
-		imgurl = e.target.result; //转化为base64
-		//alert('头像上传完成\n再点击一遍即可更新');
-		$($(".iBfcuf img")[img]).click();
-		//alert(img);
-		//console.log(imgurl, 787878);
-	};
-});
-$(".iBfcuf img").live('click',function()
-{
-	//$("#img_upload_file1").click();	
-	if (typeof imgurl !== 'undefined')
-	{
-		//alert(imgurl);
-		$(this).attr('src',imgurl);
-		imgurl = undefined;
-	}
-	else
-	{
-		img = $(".iBfcuf img").index($(this));
-		$("#up").click()
-	}
-});
-$(".jRPwkT span:not(.fWynih)").live('click',function()
-{
-	$(this).attr("hidden","hidden");
-	$(this).before("<input value='"+$(this).text()+"'><button class='mingzi'>确定修改</button>");
-});
-$(".mingzi").live('click',function()
-{
-	text = $(this).siblings("input").val();
-	if(jQuery.trim(text) == 0)text = $(this).siblings("span").text();
-	$(this).siblings("span").removeAttr('hidden').text(text);
-	$(this).siblings("input").remove();
-	$(this).remove();
-	
-});
-$(".heJhGb .medium").live('click',function()
-{
-	$(this).attr("hidden","hidden");
-	$(this).before("<input value='"+$(this).text()+"'><button class='jiban'>确定修改</button>");
-});
-$(".jiban").live('click',function()
-{
-	text = $(this).siblings("input").val();
-	if(jQuery.trim(text) == 0)text = $(this).text();
-	$(this).siblings("button").removeAttr('hidden').text(text);
-	$(this).siblings("input").remove();
-	$(this).remove();
-});
+var img;
+    var imgurl;
+    var text;
+    $("body").append("<input id='up' hidden type='file'/>");
+    $("#up").change(function()
+    {
+        var file = this.files[0];
+        //console.log(this.files, 99999);
+        var reader = new FileReader();
+        reader.readAsDataURL(file); //调用自带方法进行转换
+        reader.onload = function(e)
+        {
+            imgurl = e.target.result; //转化为base64
+            $($(".eLDbih")[img]).attr('src',imgurl);
+        };
+    });
+    $(".eLDbih").live('click',function()
+    {
+        //$("#img_upload_file1").click();
+        img = $(".eLDbih").index($(this));
+        $("#up").click()
+    });
+    $(".jRPwkT span:not(.fWynih)").live('click',function()
+                                        {
+        $(this).attr("hidden","hidden");
+        $(this).before("<input value='"+$(this).text()+"'><button class='mingzi'>确定修改</button>");
+    });
+    $(".mingzi").live('click',function()
+    {
+        text = $(this).siblings("input").val();
+        if(jQuery.trim(text) == 0)text = $(this).siblings("span").text();
+        $(this).siblings("span").removeAttr('hidden').text(text);
+        $(this).siblings("input").remove();
+        $(this).remove();
+
+    });
+    $(".heJhGb .medium").live('click',function()
+    {
+        $(this).attr("hidden","hidden");
+        $(this).before("<input value='"+$(this).text()+"'><button class='jiban'>确定修改</button>");
+    });
+    $(".jiban").live('click',function()
+    {
+        text = $(this).siblings("input").val();
+        if(jQuery.trim(text) == 0)text = $(this).siblings("button").text();
+        $(this).siblings("button").removeAttr('hidden').text(text);
+        $(this).siblings("input").remove();
+        $(this).remove();
+    });
